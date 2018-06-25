@@ -1,6 +1,13 @@
+#ifndef ROSTER_H
+#define ROSTER_H
+
 #include <list>
 #include <string>
+#include <degree.h>
 #include <student.h>
+#include <softwareStudent.h>
+#include <networkStudent.h>
+#include <securityStudent.h>
 
 using namespace std;
 
@@ -64,11 +71,14 @@ class Roster
 {
   public:
     Roster();
+    ~Roster();
+    Roster(const Roster& klass);
 
     void add(string studentID, string firstName,
              string lastName,  string emailAddress,
              int age, int daysInCourse1, int daysInCourse2,
              int daysInCourse3, Degree degree);
+    void create_student(const string&, Student) const;
     int  create_students();
     void remove(string studentID);
     void print()                                 const;
@@ -87,3 +97,4 @@ class Roster
     //Student::Degree   degree_type = new Student::Degree;
 };
 
+#endif

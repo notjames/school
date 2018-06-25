@@ -1,11 +1,17 @@
+#ifndef SECURITYSTUDENT_H
+#define SECURITYSTUDENT_H
 
-class securityStudent : private Student
+class SecurityStudent : private Student
 {
   public:
-    securityStudent();
+    SecurityStudent();
+    ~SecurityStudent();
+    SecurityStudent(const SecurityStudent& klass);
 
-    getDegreeProgram
+    string getDegreeProgram const;
 
   private:
+    Degree degreeType;
 }
 
+#endif

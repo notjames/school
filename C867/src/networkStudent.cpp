@@ -1,11 +1,10 @@
-#include <networkStudent.h>
-#include <student.h>
-#include <degree.h>
+#include <roster.h>
 
 using namespace std;
 
 networkStudent::networkStudent()
 {
+  degreeType = NETWORK;
   return;
 }
 

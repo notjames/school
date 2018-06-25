@@ -4,11 +4,11 @@ GCXXFLAGS= -I$(INCLUDES) -H
 # remove -g if you don't want debug symbols compiled in
 CXXFLAGS = -Wall -g -I$(INCLUDES)
 PRODUCT  = roster
-OBJECTS  = student.o networkStudent.o softwareStudent.o securityStudent.o
+OBJECTS  = networkStudent.o softwareStudent.o securityStudent.o student.o
 
 $(OBJECTS): $(PRODUCT)
 
-.PHONY: all
+.PHONY: all .dep
 
 #graph: $(OBJECTS)
 #	$(CXX) $(GCXXFLAGS) $^
@@ -16,8 +16,18 @@ $(OBJECTS): $(PRODUCT)
 all: $(OBJECTS)
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
+.dep:
+	mkdir $@
+.dep/%.dep: %.cpp .dep
+	(echo $@ \\; $(CXX) $(CXXFLAGS) -MM $<) > $@ || (rm $@; false)
+
+DEPEND := $(patsubst %.dep,.dep/%.dep,$(OBJ:.o=.dep))
+	include $(DEPEND)
+
 install:
 	mv $(PRODUCT) ..
 
 clean:
 	-rm *.o ../$(PRODUCT)
+
+

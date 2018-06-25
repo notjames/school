@@ -1,12 +1,17 @@
+#ifndef NETWORKSTUDENT_H
+#define NETWORKSTUDENT_H
 
-class networkStudent : private Student
+class NetworkStudent : private Student
 {
   public:
-    networkStudent();
+    NetworkStudent();
+    ~NetworkStudent();
+    NetworkStudent(const NetworkStudent& klass);
 
-    getDegreeProgram
+    int getDegreeProgram();
 
   private:
+    Degree degreeType;
 }
 
-
+#endif

@@ -1,15 +1,22 @@
-#include <securityStudent.h>
-#include <student.h>
-#include <degree.h>
+#include <roster.h>
 
 using namespace std;
 
-securityStudent::securityStudent()
+// constructor
+SecurityStudent::SecurityStudent()
 {
+  degreeType = SECURITY;
   return;
 }
 
-string securityStudent::getDegreeProgram const
+// destructor
+SecurityStudent::~SecurityStudent()
+{
+  delete degreeType;
+}
+
+// getter
+string SecurityStudent::getDegreeProgram const
 {
   return "nothing for now";
 }

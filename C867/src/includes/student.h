@@ -1,3 +1,6 @@
+#ifndef STUDENT_H
+#define STUDENT_H
+
 #include <iostream>
 
 using namespace std;
@@ -60,9 +63,12 @@ using namespace std;
 class Student
 {
   public:
+    Student();
+    ~Student();
     Student(string first_name, string last_name,
             string email_addr, int age, int *num_days,
             string student_id);
+    Student(const Student& klass);
 
     string   get_student_id(string first_name, string last_name, string email_addr) const;
     string   get_sid_by_fn(string first_name);
@@ -91,3 +97,4 @@ class Student
     int      num_days[3]; // array of number of days to complete each course
 };
 
+#endif

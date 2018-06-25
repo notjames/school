@@ -1,17 +1,22 @@
-#include <softwareStudent.h>
-#include <student.h>
-#include <degree.h>
+#include <roster.h>
 
 using namespace std;
 
 // constructor
-softwareStudent::softwareStudent()
+SoftwareStudent::SoftwareStudent()
 {
   degreeType = SOFTWARE;
+  return;
+}
+
+// destructor
+SoftwareStudent::~SoftwareStudent()
+{
+  delete degreeType;
 }
 
 // getter
-string softwareStudent::getDegreeProgram
+string SoftwareStudent::getDegreeProgram
 {
   return("Software");
 }

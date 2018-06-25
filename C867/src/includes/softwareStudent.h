@@ -1,12 +1,17 @@
+#ifndef SOFTWARESTUDENT_H
+#define SOFTWARESTUDENT_H
 
-class softwareStudent : private Student
+class SoftwareStudent : private Student
 {
   public:
-    softwareStudent();
+    SoftwareStudent();
+    ~SoftwareStudent();
+    SoftwareStudent(const SoftwareStudent& klass);
 
-    void getDegreeProgram() const;
+    string getDegreeProgram() const;
 
   private:
     Degree degreeType;
 }
 
+#endif
