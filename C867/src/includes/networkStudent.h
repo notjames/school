@@ -12,6 +12,6 @@ class NetworkStudent : private Student
 
   private:
     Degree degreeType;
-}
+};
 
 #endif

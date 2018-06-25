@@ -8,10 +8,10 @@ class SecurityStudent : private Student
     ~SecurityStudent();
     SecurityStudent(const SecurityStudent& klass);
 
-    string getDegreeProgram const;
+    string getDegreeProgram();
 
   private:
     Degree degreeType;
-}
+};
 
 #endif

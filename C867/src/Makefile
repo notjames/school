@@ -1,21 +1,18 @@
 INCLUDES = ./includes
 CXX      = g++
-GCXXFLAGS= -I$(INCLUDES) -H
 # remove -g if you don't want debug symbols compiled in
 CXXFLAGS = -Wall -g -I$(INCLUDES)
 PRODUCT  = roster
 OBJECTS  = networkStudent.o softwareStudent.o securityStudent.o student.o
 
-$(OBJECTS): $(PRODUCT)
+$(PRODUCT): $(OBJECTS)
 
-.PHONY: all .dep
-
-#graph: $(OBJECTS)
-#	$(CXX) $(GCXXFLAGS) $^
+.PHONY: .dep all
 
 all: $(OBJECTS)
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
+# g++ -I includes -MMD -H *.cpp -MF deps.out > deps.txt 2>&1
 .dep:
 	mkdir $@
 .dep/%.dep: %.cpp .dep

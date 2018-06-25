@@ -5,18 +5,17 @@ using namespace std;
 // constructor
 SoftwareStudent::SoftwareStudent()
 {
-  degreeType = SOFTWARE;
+  degreeType = Degree::SOFTWARE;
   return;
 }
 
 // destructor
 SoftwareStudent::~SoftwareStudent()
 {
-  delete degreeType;
 }
 
 // getter
-string SoftwareStudent::getDegreeProgram
+string SoftwareStudent::getDegreeProgram()
 {
   return("Software");
 }

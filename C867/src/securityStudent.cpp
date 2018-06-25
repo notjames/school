@@ -5,18 +5,18 @@ using namespace std;
 // constructor
 SecurityStudent::SecurityStudent()
 {
-  degreeType = SECURITY;
+  degreeType = Degree::SECURITY;
   return;
 }
 
 // destructor
 SecurityStudent::~SecurityStudent()
 {
-  delete degreeType;
 }
 
 // getter
-string SecurityStudent::getDegreeProgram const
+string SecurityStudent::getDegreeProgram()
 {
-  return "nothing for now";
+  string str = "Nothing for now.";
+  return str;
 }

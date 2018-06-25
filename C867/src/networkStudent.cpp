@@ -2,13 +2,20 @@
 
 using namespace std;
 
-networkStudent::networkStudent()
+// constructor
+NetworkStudent::NetworkStudent()
 {
-  degreeType = NETWORK;
+  degreeType = Degree::NETWORKING;
   return;
 }
 
-int networkStudent::getDegreeProgram()
+// destructor
+NetworkStudent::~NetworkStudent()
+{
+}
+
+// getters
+int NetworkStudent::getDegreeProgram()
 {
   return 0;
 }

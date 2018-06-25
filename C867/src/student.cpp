@@ -9,9 +9,8 @@ Student::Student()
   student_id    = student_id;
   first_name    = first_name;
   last_name     = last_name;
-  email_address = email_addr;
+  email_address = email_address;
   age           = age;
-  num_days      = num_days;
 
   // the only way I could set num_days inside the constructor
   for ( int i = 0; i <= 3; i++ ) num_days[i] = 0;
@@ -40,7 +39,6 @@ Student::Student(string first_name, string last_name,
 // destructor
 Student::~Student()
 {
-  delete Student;
 }
 
 // setters

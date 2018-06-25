@@ -27,21 +27,25 @@ const string author      = "Jim Conner";
 // default constructor
 Roster::Roster()
 {
+  num_elements     = sizeof(studentData)/sizeof(string);
+  classRosterArray = new Student[num_elements];
+
   this->create_students();
   return;
 }
 
+Roster::~Roster()
+{
+  delete[] classRosterArray;
+}
+
 int Roster::create_students()
 {
-  int num_elements          = sizeof(studentData)/sizeof(string);
-  Student *classRosterArray = new Student[num_elements];
-
   for ( int i = 0; i < num_elements; i++ )
   {
     create_student(studentData[i], classRosterArray[i]);
   }
 
-  delete[] classRosterArray;
   return 0;
 }
 

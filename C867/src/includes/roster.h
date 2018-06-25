@@ -94,6 +94,8 @@ class Roster
     string   email_address;
     int      age;
     int      num_days[3]; // array of number of days to complete each course
+    int      num_elements;
+    Student *classRosterArray;
     //Student::Degree   degree_type = new Student::Degree;
 };
 
