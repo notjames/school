@@ -1,4 +1,5 @@
 #include <cstddef>
+#include <string.h>
 #include <roster.h>
 
 /*
@@ -40,11 +41,14 @@ int Roster::create_students()
     int d1, d2, d3;
 
     string line      = studentData[i];
-    string delimiter = ",";
-    size_t pos       = 0;
+    char delimiter[] = ",";
+    //size_t pos       = 0;
     int    i_word    = 0;
-    string token, a_student[8];
+    //string token, a_student[8];
+    string a_student[8];
 
+
+/*
     while ((pos = line.find(delimiter)) != std::string::npos)
     {
         token = line.substr(0, pos);
@@ -53,13 +57,23 @@ int Roster::create_students()
 
         line.erase(0, pos + delimiter.length());
     }
+*/
+
+    char *token;
+    token = strtok(&line[0], delimiter);
+    while (token != NULL && i_word < 8)
+    {
+      a_student[i_word] = token;
+      i_word++;
+      token = strtok(NULL,delimiter);
+    }
 
     d1          = atoi(a_student[4].c_str());
     d2          = atoi(a_student[5].c_str());
     d3          = atoi(a_student[6].c_str());
     int num_days[3] = {d1, d2, d3};
-    Student *s;
 
+    Student *s;
     s = new Student();
 
     for ( int i = 0; i <= i_word; i++ )
@@ -67,9 +81,18 @@ int Roster::create_students()
       s->set_student_id(a_student[0]);
       s->set_first_name(a_student[1]);
       s->set_last_name(a_student[2]);
-      s->set_email_address(a_student[3]);
+      s->set_email_address(&a_student[3]);
       s->set_num_days(num_days);
       s->set_age(atoi(a_student[7].c_str()));
+
+/*
+      cout << "student id: " << s->get_student_id() << endl;
+      cout << "first name: " << s->get_first_name() << endl;
+      cout << "last name : " << s->get_last_name()  << endl;
+      cout << "email addr: " << s->get_email_address() << endl;
+      cout << "age:        " << s->get_age()        << endl;
+      cout << endl;
+ */
     }
 
     classRosterArray[i] = s;

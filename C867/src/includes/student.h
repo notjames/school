@@ -82,7 +82,7 @@ class Student
     void     set_student_id(string)   ;
     void     set_first_name(string)   ;
     void     set_last_name(string)    ;
-    void     set_email_address(string);
+    void     set_email_address(string *);
     void     set_age(int)             ;
     void     set_num_days(int*)       ;
 
@@ -93,6 +93,7 @@ class Student
     string   first_name;
     string   last_name;
     string   email_address;
+    string   *shadow;
     int      age;
     int      num_days[3]; // array of number of days to complete each course
 };
