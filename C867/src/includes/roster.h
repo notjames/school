@@ -80,13 +80,14 @@ class Roster
              string lastName,  string emailAddress,
              int age, int daysInCourse1, int daysInCourse2,
              int daysInCourse3, Degree degree);
-    void create_student(const string&, Student)  const;
+    void create_student(const string&, Student);
     int  create_students();
     void remove(string);
-    void printAll()                              const;
-    void printDaysInCourse(string)               const;
-    void printInvalidEmails()                    const;
-    void printByDegreeProgram(Degree)            const;
+    void printAll();
+    void printDaysInCourse(string);
+    void printAverageDaysInCourse(string);
+    void printInvalidEmails();
+    void printByDegreeProgram(Degree);
 
   private:
     string   student_id;

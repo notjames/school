@@ -42,13 +42,13 @@ int Roster::create_students()
 
     string line      = studentData[i];
     char delimiter[] = ",";
-    //size_t pos       = 0;
     int    i_word    = 0;
-    //string token, a_student[8];
     string a_student[8];
 
 
 /*
+    //size_t pos       = 0;
+    //string token, a_student[8];
     while ((pos = line.find(delimiter)) != std::string::npos)
     {
         token = line.substr(0, pos);
@@ -104,6 +104,34 @@ int Roster::create_students()
 }
 
 /* create the other functions here */
+void Roster::add(string studentID, string firstName, string lastName,
+                 string emailAddress, int age, int daysInCourse1, int daysInCourse2,
+                 int daysInCourse3, Degree degree_type)
+{
+
+}
+
+void Roster::printInvalidEmails()
+{
+
+}
+
+void Roster::printAverageDaysInCourse(string student_id)
+{
+
+}
+
+void Roster::printAll()
+{
+}
+
+void Roster::printDaysInCourse(string)
+{
+}
+
+void Roster::printByDegreeProgram(Degree)
+{
+}
 
 // main -- entrance to the whole app.
 int main(void)
