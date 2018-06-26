@@ -68,25 +68,25 @@ class Student
     Student(string first_name, string last_name,
             string email_addr, int age, int *num_days,
             string student_id);
-    Student(const Student& klass);
+    // copy constructor not needed, but usually recommended
+    // So, just placing commented out for personal-use sake.
+    //Student(const Student& klass);
 
-    string   get_student_id(string first_name, string last_name, string email_addr) const;
-    string   get_sid_by_fn(string first_name);
-    string   get_first_name(int student_id)     const;
-    string   get_last_name(int student_id)      const;
-    string   get_email_address(int student_id)  const;
-    int      get_age(int student_id)            const;
-    int      get_num_days(int student_id)       const;
+    string   get_student_id()         ;
+    string   get_first_name()         ;
+    string   get_last_name()          ;
+    string   get_email_address()      ;
+    int      get_age()                ;
+    int*     get_num_days()           ;
 
-    void set_student_id(string first_name, string last_name,
-                        string email_addr, string student_id);
-    void set_first_name(int student_id);
-    void set_last_name(int student_id);
-    void set_email_address(int student_id);
-    void set_age(int student_id);
-    void set_num_days(int student_id);
+    void     set_student_id(string)   ;
+    void     set_first_name(string)   ;
+    void     set_last_name(string)    ;
+    void     set_email_address(string);
+    void     set_age(int)             ;
+    void     set_num_days(int*)       ;
 
-    void print();
+    virtual void print();
 
   private:
     string   student_id;

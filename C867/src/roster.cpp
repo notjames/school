@@ -1,3 +1,4 @@
+#include <cstddef>
 #include <roster.h>
 
 /*
@@ -27,32 +28,59 @@ const string author      = "Jim Conner";
 // default constructor
 Roster::Roster()
 {
-  num_elements     = sizeof(studentData)/sizeof(string);
-  classRosterArray = new Student[num_elements];
-
   this->create_students();
-  return;
 }
 
-Roster::~Roster()
-{
-  delete[] classRosterArray;
-}
+Roster::~Roster() { }
 
 int Roster::create_students()
 {
-  for ( int i = 0; i < num_elements; i++ )
+  for ( int i = 0; i < MAX; i++ )
   {
-    create_student(studentData[i], classRosterArray[i]);
+    int d1, d2, d3;
+
+    string line      = studentData[i];
+    string delimiter = ",";
+    size_t pos       = 0;
+    int    i_word    = 0;
+    string token, a_student[8];
+
+    while ((pos = line.find(delimiter)) != std::string::npos)
+    {
+        token = line.substr(0, pos);
+        a_student[i_word] = token;
+        i_word++;
+
+        line.erase(0, pos + delimiter.length());
+    }
+
+    d1          = atoi(a_student[4].c_str());
+    d2          = atoi(a_student[5].c_str());
+    d3          = atoi(a_student[6].c_str());
+    int num_days[3] = {d1, d2, d3};
+    Student *s;
+
+    s = new Student();
+
+    for ( int i = 0; i <= i_word; i++ )
+    {
+      s->set_student_id(a_student[0]);
+      s->set_first_name(a_student[1]);
+      s->set_last_name(a_student[2]);
+      s->set_email_address(a_student[3]);
+      s->set_num_days(num_days);
+      s->set_age(atoi(a_student[7].c_str()));
+    }
+
+    classRosterArray[i] = s;
+
+    //create_student(studentData[i], classRosterArray[i]);
   }
 
   return 0;
 }
 
-void create_student(string student_data, Student& student)
-{
-  student.print();
-}
+/* create the other functions here */
 
 // main -- entrance to the whole app.
 int main(void)
@@ -65,7 +93,16 @@ int main(void)
 
   Roster classRoster;
 
+  /*
+  classRoster.printAll();
+  classRoster.printInvalidEmails();
+  // loop through classRosterArray and for each element:
+    classRoster.printAverageDaysInCourse(//current_object's student id//);
+  classRoster.printByDegreeProgram(SOFTWARE);
+  classRoster.remove("A3");
+  classRoster.remove("A3");
+  */
   //delete classRoster;
+
   return 0;
 }
-

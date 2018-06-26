@@ -1,21 +1,32 @@
 #include <roster.h>
+#include <student.h>
 
+// may need to include degree.h
 using namespace std;
 
 // constructor
-NetworkStudent::NetworkStudent()
+NetworkStudent::NetworkStudent(string first_name, string last_name,
+                               string email_addr, int age, int *num_days,
+                               string student_id)
+  : Student ( first_name, last_name, email_addr, age, num_days, student_id )
 {
   degreeType = Degree::NETWORKING;
-  return;
 }
 
 // destructor
-NetworkStudent::~NetworkStudent()
-{
-}
+NetworkStudent::~NetworkStudent() { }
 
 // getters
-int NetworkStudent::getDegreeProgram()
+string NetworkStudent::getDegreeProgram()
 {
-  return 0;
+  return "Networking";
+}
+
+void NetworkStudent::print()
+{
+  cout << "ID: "     << this->get_student_id()    << "\t";
+  cout << "Name: "   << this->get_first_name()    << " " << this->get_last_name() << "\t";
+  cout << "Age:  "   << this->get_age()           << "\t";
+  cout << "Email:  " << this->get_email_address() << "\t";
+  cout << "Degree: " << this->getDegreeProgram()  << endl;
 }

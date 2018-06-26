@@ -34,7 +34,7 @@ using namespace std;
               If the student ID does not exist, the function prints an error message
               indicating that the student was not found.
 
-✅        c.  public void printAll() that prints a complete tab-separated list of
+          c.  public void printAll() that prints a complete tab-separated list of
               student data using accessor functions with the provided format:
 
               1 [tab] First Name: John [tab] Last Name: Smith [tab] Age: 20
@@ -53,12 +53,13 @@ using namespace std;
               Note: A valid email should include an at sign ('@') and period ('.') and
               should not include a space (' ').
 
-✅        f.  public void printByDegreeProgram(int degreeProgram) that prints out student
+✅        f.  public void printByDegreeProgram(Degree degreeProgram) that prints out student
               information for a degree program specified by an enumerated type
+
+
+                               0    1   2     3                   4  5  6  7    8
+                               SID, FN, LN,   email,              d1,d2,d3,age, degree
  */
-
-// TODO still need to create the functions.
-
 const string studentData[] = {
                                "A1,John,Smith,John1989@gm ail.com,20,30,35,40,SECURITY",
                                "A2,Suzan,Erickson,Erickson_1990@gmailcom,19,50,30,40,NETWORK",
@@ -66,26 +67,26 @@ const string studentData[] = {
                                "A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY",
                                "A5,Jim,Conner,jconn59@wgu.edu,45,13,0,0,SOFTWARE",
                              };
+const int MAX = 5;
 
 class Roster
 {
   public:
     Roster();
     ~Roster();
-    Roster(const Roster& klass);
+    //Roster(const Roster& klass);
 
     void add(string studentID, string firstName,
              string lastName,  string emailAddress,
              int age, int daysInCourse1, int daysInCourse2,
              int daysInCourse3, Degree degree);
-    void create_student(const string&, Student) const;
+    void create_student(const string&, Student)  const;
     int  create_students();
-    void remove(string studentID);
-    void print()                                 const;
+    void remove(string);
     void printAll()                              const;
-    void printDaysInCourse(string studentID)     const;
+    void printDaysInCourse(string)               const;
     void printInvalidEmails()                    const;
-    void printByDegreeProgram(int degreeProgram) const;
+    void printByDegreeProgram(Degree)            const;
 
   private:
     string   student_id;
@@ -94,9 +95,7 @@ class Roster
     string   email_address;
     int      age;
     int      num_days[3]; // array of number of days to complete each course
-    int      num_elements;
-    Student *classRosterArray;
-    //Student::Degree   degree_type = new Student::Degree;
+    Student *classRosterArray[MAX];
 };
 
 #endif
