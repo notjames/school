@@ -122,7 +122,7 @@ void Roster::printAll()
     }
     cout << "}";
 
-    cout << "\tDegree Program: " << this->classRosterArray[i]->get_degree_type();
+    cout << "\tDegree Program: " << this->classRosterArray[i]->get_degree_name();
   }
 }
 

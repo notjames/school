@@ -68,7 +68,7 @@ class Student
     ~Student();
     Student(string first_name, string last_name,
             string email_addr, int age, int *num_days,
-            string student_id);
+            string student_id, Degree degree_type);
     // copy constructor not needed, but usually recommended
     // So, just placing commented out for personal-use sake.
     //Student(const Student& klass);

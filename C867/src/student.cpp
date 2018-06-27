@@ -27,9 +27,6 @@ Student::Student(string first_name, string last_name,
   first_name    = first_name;
   last_name     = last_name;
   email_address = email_addr;
-  age           = age;
-  num_days      = num_days;
-  degree_type   = degree_type;
 }
 
 // destructor
@@ -60,11 +57,19 @@ void Student::set_degree_type(string degree_name)
 {
   this->degree_name = degree_name;
 
-  switch(this->degree_name)
+  if ( this->degree_name == "Software" )
   {
-    case "Software" : this->degree_type = SOFTWARE;   break;
-    case "Network"  : this->degree_type = NETWORKING; break;
-    case "Security" : this->degree_type = SECURITY;   break;
+    this->degree_type = SOFTWARE;
+  }
+
+  if ( this->degree_name == "Networking" )
+  {
+    this->degree_type = NETWORKING;
+  }
+
+  if ( this->degree_name == "Security" )
+  {
+    this->degree_type = SECURITY;
   }
 }
 
