@@ -7,7 +7,7 @@ class SoftwareStudent : private Student
     SoftwareStudent();
     SoftwareStudent(string first_name, string last_name,
                     string email_addr, int age, int *num_days,
-                    string student_id);
+                    string student_id, Degree degree_type);
     ~SoftwareStudent();
     //SoftwareStudent(const SoftwareStudent& klass);
 

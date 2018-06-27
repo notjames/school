@@ -7,8 +7,8 @@ using namespace std;
 // constructor
 NetworkStudent::NetworkStudent(string first_name, string last_name,
                                string email_addr, int age, int *num_days,
-                               string student_id)
-  : Student ( first_name, last_name, email_addr, age, num_days, student_id )
+                               string student_id, Degree degree_type)
+  : Student ( first_name, last_name, email_addr, age, num_days, student_id, degree_type )
 {
   degreeType = Degree::NETWORKING;
 }
