@@ -4,14 +4,15 @@
 using namespace std;
 
 // default constructor
-// this is not necessary -- just the one with parameters
+// this is not necessary for the project -- just the one with parameters
 Student::Student()
 {
-  student_id    = student_id;
-  first_name    = first_name;
-  last_name     = last_name;
-  email_address = email_address;
-  age           = age;
+  student_id    = "student_id";
+  first_name    = "first_name";
+  last_name     = "last_name";
+  email_address = "email_address";
+  age           = 0;
+  degree_name   = "";
 
   // the only way I could set num_days inside the constructor
   for ( int i = 0; i <= 3; i++ ) num_days[i] = 0;
@@ -20,7 +21,7 @@ Student::Student()
 // constructor
 Student::Student(string first_name, string last_name,
                  string email_addr, int age, int *num_days,
-                 string student_id)
+                 string student_id, Degree degree_type)
 {
   student_id    = student_id;
   first_name    = first_name;
@@ -28,12 +29,11 @@ Student::Student(string first_name, string last_name,
   email_address = email_addr;
   age           = age;
   num_days      = num_days;
+  degree_type   = degree_type;
 }
 
 // destructor
-Student::~Student()
-{
-}
+Student::~Student() {}
 
 // define copy constructor or remove/comment it
 
@@ -51,6 +51,21 @@ void Student::set_first_name(string first_name)
 void Student::set_last_name(string last_name)
 {
   this->last_name = last_name;
+}
+
+// so to use this function, caller will set this->degree_name
+// and then use this setter. The setter will mutate degree_type
+// by looking at this->degree_name
+void Student::set_degree_type(string degree_name)
+{
+  this->degree_name = degree_name;
+
+  switch(this->degree_name)
+  {
+    case "Software" : this->degree_type = SOFTWARE;   break;
+    case "Network"  : this->degree_type = NETWORKING; break;
+    case "Security" : this->degree_type = SECURITY;   break;
+  }
 }
 
 // for some reason during runtime, I keep getting memory
@@ -71,6 +86,18 @@ void Student::set_age(int age)
 void Student::set_num_days(int *num_days)
 {
   for ( int i = 0; i <= 3; i++ ) this->num_days[i] = num_days[i];
+}
+
+void Student::set_degreetostr()
+{
+  switch(this->degree_type)
+  {
+    case SOFTWARE   : this->degree_name = "Software";     break;
+    case NETWORKING : this->degree_name = "Networking";   break;
+    case SECURITY   : this->degree_name = "Security";     break;
+    // technically shouldn't happen
+    default         : this->degree_name = "Not Assigned"; break;
+  }
 }
 
 // getters
@@ -103,6 +130,11 @@ int Student::get_age()
 int *Student::get_num_days()
 {
   return this->num_days;
+}
+
+string Student::get_degree_name()
+{
+  return this->degree_name;
 }
 
 // TODO and then fix this too to accept student_id and print just one student.

@@ -40,27 +40,16 @@ int Roster::create_students()
   {
     int d1, d2, d3;
 
-    string line      = studentData[i];
-    char delimiter[] = ",";
-    int    i_word    = 0;
+    Student *s;
+    s                  = new Student();
+    string line        = studentData[i];
+    char   delimiter[] = ",";
+    int    i_word      = 0;
+    char   *token;
     string a_student[8];
 
-
-/*
-    //size_t pos       = 0;
-    //string token, a_student[8];
-    while ((pos = line.find(delimiter)) != std::string::npos)
-    {
-        token = line.substr(0, pos);
-        a_student[i_word] = token;
-        i_word++;
-
-        line.erase(0, pos + delimiter.length());
-    }
-*/
-
-    char *token;
     token = strtok(&line[0], delimiter);
+
     while (token != NULL && i_word < 8)
     {
       a_student[i_word] = token;
@@ -73,9 +62,6 @@ int Roster::create_students()
     d3          = atoi(a_student[6].c_str());
     int num_days[3] = {d1, d2, d3};
 
-    Student *s;
-    s = new Student();
-
     for ( int i = 0; i <= i_word; i++ )
     {
       s->set_student_id(a_student[0]);
@@ -84,6 +70,7 @@ int Roster::create_students()
       s->set_email_address(&a_student[3]);
       s->set_num_days(num_days);
       s->set_age(atoi(a_student[7].c_str()));
+      s->set_degree_type(a_student[8].c_str());
 
 /*
       cout << "student id: " << s->get_student_id() << endl;
@@ -96,8 +83,6 @@ int Roster::create_students()
     }
 
     classRosterArray[i] = s;
-
-    //create_student(studentData[i], classRosterArray[i]);
   }
 
   return 0;
@@ -113,16 +98,32 @@ void Roster::add(string studentID, string firstName, string lastName,
 
 void Roster::printInvalidEmails()
 {
-
 }
 
 void Roster::printAverageDaysInCourse(string student_id)
 {
-
 }
 
+// print should do:
+// [tab] First Name: John [tab] Last Name: Smith [tab] Age: 20
+// [tab]daysInCourse: {35, 40, 55} Degree Program: Security.
 void Roster::printAll()
 {
+  for ( int i = 0 ; i <= MAX ; i++ )
+  {
+    cout << "\tFirst Name: " << this->classRosterArray[i]->get_first_name();
+    cout << "\tLast Name:" << this->classRosterArray[i]->get_last_name();
+    cout << "\tAge: " << this->classRosterArray[i]->get_age();
+
+    cout << "\tdaysInCourse: {";
+    for ( int z = 0 ; z < 3 ; z++ )
+    {
+      cout << "\t" << this->classRosterArray[i]->get_num_days()[z] << ",";
+    }
+    cout << "}";
+
+    cout << "\tDegree Program: " << this->classRosterArray[i]->get_degree_type();
+  }
 }
 
 void Roster::printDaysInCourse(string)

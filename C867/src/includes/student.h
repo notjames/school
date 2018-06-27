@@ -2,6 +2,7 @@
 #define STUDENT_H
 
 #include <iostream>
+#include <degree.h>
 
 using namespace std;
 
@@ -78,6 +79,7 @@ class Student
     string   get_email_address()      ;
     int      get_age()                ;
     int*     get_num_days()           ;
+    string   get_degree_name()        ; // gets degree_name
 
     void     set_student_id(string)   ;
     void     set_first_name(string)   ;
@@ -85,7 +87,8 @@ class Student
     void     set_email_address(string *);
     void     set_age(int)             ;
     void     set_num_days(int*)       ;
-
+    void     set_degreetostr()        ; // sets degree_name
+    void     set_degree_type(string)  ; // sets degree_name and Degree enum
     virtual void print();
 
   private:
@@ -96,6 +99,8 @@ class Student
     string   *shadow;
     int      age;
     int      num_days[3]; // array of number of days to complete each course
+    string   degree_name;
+    Degree   degree_type;
 };
 
 #endif

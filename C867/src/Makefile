@@ -1,7 +1,7 @@
 INCLUDES = ./includes
 CXX      = g++
 # remove -g if you don't want debug symbols compiled in
-CXXFLAGS = -Wall -g -I$(INCLUDES)
+CXXFLAGS = -Wall -g -I$(INCLUDES) -Wc++11-extensions -std=c++11
 PRODUCT  = roster
 OBJECTS  = networkStudent.o softwareStudent.o securityStudent.o student.o
 
@@ -26,5 +26,3 @@ install:
 
 clean:
 	-rm *.o ../$(PRODUCT)
-
-
