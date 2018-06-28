@@ -53,11 +53,11 @@ int Roster::create_students()
     char   delimiter[] = ",";
     int    i_word      = 0;
     char   *token;
-    string a_student[8];
+    string a_student[9];
 
     token = strtok(&line[0], delimiter);
 
-    while (token != NULL && i_word < 8)
+    while (token != NULL && i_word < 9)
     {
       a_student[i_word] = token;
       i_word++;
@@ -84,6 +84,7 @@ int Roster::create_students()
       cout << "last name : " << s->get_last_name()  << endl;
       cout << "email addr: " << s->get_email_address() << endl;
       cout << "age:        " << s->get_age()        << endl;
+      cout << "program:    " << s->get_degree_name()<< endl;
       cout << endl;
  */
     }
@@ -140,7 +141,6 @@ void Roster::printAll()
     cout << setw(15) << " Degree Program: " << this->classRosterArray[i]->get_degree_name();
     cout << endl;
   }
-    cout << "Got here too";
 }
 
 void Roster::printDaysInCourse(string) { }

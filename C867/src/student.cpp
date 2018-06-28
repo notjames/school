@@ -56,9 +56,7 @@ void Student::set_last_name(string last_name)
 void Student::set_degree_type(string degree_name)
 {
   this->degree_name = degree_name;
-  cout << "JUST GOT HERE!" << endl;
 
-  cout << "Just set degree name to: " << this->degree_name << endl;
   if ( this->degree_name == "Software" )
   {
     this->degree_type = SOFTWARE;
