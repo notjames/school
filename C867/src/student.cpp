@@ -21,7 +21,7 @@ Student::Student()
 // constructor
 Student::Student(string first_name, string last_name,
                  string email_addr, int age, int *num_days,
-                 string student_id, Degree degree_type)
+                 string student_id, string degree_name)
 {
   student_id    = student_id;
   first_name    = first_name;
@@ -56,7 +56,9 @@ void Student::set_last_name(string last_name)
 void Student::set_degree_type(string degree_name)
 {
   this->degree_name = degree_name;
+  cout << "JUST GOT HERE!" << endl;
 
+  cout << "Just set degree name to: " << this->degree_name << endl;
   if ( this->degree_name == "Software" )
   {
     this->degree_type = SOFTWARE;

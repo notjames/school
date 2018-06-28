@@ -1,6 +1,13 @@
 #include <cstddef>
-#include <string.h>
+#include <iostream>
+#include <string>
+#include <iomanip>
 #include <roster.h>
+
+using namespace std;
+using std::cout;
+using std::endl;
+using std::setw;
 
 /*
   F.  Demonstrate the program’s required functionality by adding a void main() function to roster.cpp,
@@ -71,7 +78,6 @@ int Roster::create_students()
       s->set_num_days(num_days);
       s->set_age(atoi(a_student[7].c_str()));
       s->set_degree_type(a_student[8].c_str());
-
 /*
       cout << "student id: " << s->get_student_id() << endl;
       cout << "first name: " << s->get_first_name() << endl;
@@ -91,7 +97,7 @@ int Roster::create_students()
 /* create the other functions here */
 void Roster::add(string studentID, string firstName, string lastName,
                  string emailAddress, int age, int daysInCourse1, int daysInCourse2,
-                 int daysInCourse3, Degree degree_type)
+                 int daysInCourse3, string degree_name)
 {
 
 }
@@ -111,28 +117,35 @@ void Roster::printAll()
 {
   for ( int i = 0 ; i <= MAX ; i++ )
   {
-    cout << "\tFirst Name: " << this->classRosterArray[i]->get_first_name();
-    cout << "\tLast Name:" << this->classRosterArray[i]->get_last_name();
-    cout << "\tAge: " << this->classRosterArray[i]->get_age();
+    cout << left << "First Name:      " << setw(8) << this->classRosterArray[i]->get_first_name();
+    cout << left << " Last Name:      " << setw(8) << this->classRosterArray[i]->get_last_name();
+    cout << left << " Age:           "  << this->classRosterArray[i]->get_age();
 
-    cout << "\tdaysInCourse: {";
+    if ( this->classRosterArray[i]->get_age() < 10 )
+    {
+      cout << left << setw(16) << "\tdaysInCourse:  {";
+    }
+    else
+    {
+      cout << left << setw(16) << "\tdaysInCourse: {";
+    }
+
     for ( int z = 0 ; z < 3 ; z++ )
     {
-      cout << "\t" << this->classRosterArray[i]->get_num_days()[z] << ",";
+      cout << this->classRosterArray[i]->get_num_days()[z];
+      if ( z != 2 ) { cout << ", "; }
     }
-    cout << "}";
+    cout << setw(6) << left << "}";
 
-    cout << "\tDegree Program: " << this->classRosterArray[i]->get_degree_name();
+    cout << setw(15) << " Degree Program: " << this->classRosterArray[i]->get_degree_name();
+    cout << endl;
   }
+    cout << "Got here too";
 }
 
-void Roster::printDaysInCourse(string)
-{
-}
+void Roster::printDaysInCourse(string) { }
 
-void Roster::printByDegreeProgram(Degree)
-{
-}
+void Roster::printByDegreeProgram(Degree) { }
 
 // main -- entrance to the whole app.
 int main(void)
@@ -145,8 +158,8 @@ int main(void)
 
   Roster classRoster;
 
-  /*
   classRoster.printAll();
+  /*
   classRoster.printInvalidEmails();
   // loop through classRosterArray and for each element:
     classRoster.printAverageDaysInCourse(//current_object's student id//);
@@ -154,7 +167,8 @@ int main(void)
   classRoster.remove("A3");
   classRoster.remove("A3");
   */
-  //delete classRoster;
+
+  delete[] &classRoster;
 
   return 0;
 }

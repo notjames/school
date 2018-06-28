@@ -79,8 +79,7 @@ class Roster
     void add(string studentID, string firstName,
              string lastName,  string emailAddress,
              int age, int daysInCourse1, int daysInCourse2,
-             int daysInCourse3, Degree degree);
-    void create_student(const string&, Student);
+             int daysInCourse3, string degree_name);
     int  create_students();
     void remove(string);
     void printAll();

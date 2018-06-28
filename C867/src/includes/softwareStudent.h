@@ -1,21 +1,23 @@
 #ifndef SOFTWARESTUDENT_H
 #define SOFTWARESTUDENT_H
 
+#include <string>
+
 class SoftwareStudent : private Student
 {
   public:
     SoftwareStudent();
     SoftwareStudent(string first_name, string last_name,
                     string email_addr, int age, int *num_days,
-                    string student_id, Degree degree_type);
+                    string student_id, string degree_name);
     ~SoftwareStudent();
     //SoftwareStudent(const SoftwareStudent& klass);
 
-    string getDegreeProgram();
-    void   print();
+    virtual void getDegreeProgram();
+    void print();
 
   private:
-    Degree degreeType;
+    string degree_name;
 };
 
 #endif

@@ -68,7 +68,7 @@ class Student
     ~Student();
     Student(string first_name, string last_name,
             string email_addr, int age, int *num_days,
-            string student_id, Degree degree_type);
+            string student_id, string degree_name);
     // copy constructor not needed, but usually recommended
     // So, just placing commented out for personal-use sake.
     //Student(const Student& klass);
@@ -89,7 +89,8 @@ class Student
     void     set_num_days(int*)       ;
     void     set_degreetostr()        ; // sets degree_name
     void     set_degree_type(string)  ; // sets degree_name and Degree enum
-    virtual void print();
+    virtual void print()              ;
+    void     getDegreeProgram()   ;
 
   private:
     string   student_id;

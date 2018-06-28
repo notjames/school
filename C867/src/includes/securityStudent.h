@@ -7,15 +7,15 @@ class SecurityStudent : private Student
     SecurityStudent();
     SecurityStudent(string first_name, string last_name,
                     string email_addr, int age, int *num_days,
-                    string student_id, Degree degree_type);
+                    string student_id, string degree_name);
     ~SecurityStudent();
     //SecurityStudent(const SecurityStudent& klass);
 
-    string getDegreeProgram();
-    void   print();
+    void getDegreeProgram();
+    void print();
 
   private:
-    Degree degreeType;
+    string degree_name;
 };
 
 #endif
