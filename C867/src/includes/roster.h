@@ -3,11 +3,11 @@
 
 #include <list>
 #include <string>
-#include <degree.h>
-#include <student.h>
-#include <softwareStudent.h>
-#include <networkStudent.h>
-#include <securityStudent.h>
+#include "degree.h"
+#include "student.h"
+#include "softwareStudent.h"
+#include "networkStudent.h"
+#include "securityStudent.h"
 
 using namespace std;
 
@@ -57,15 +57,15 @@ using namespace std;
               information for a degree program specified by an enumerated type
 
 
-                               0    1   2     3                   4  5  6  7    8
-                               SID, FN, LN,   email,              d1,d2,d3,age, degree
+                               0    1   2     3                   4   5  6  7   8
+                               SID, FN, LN,   email,              age,d1,d2,d3, degree
  */
 const string studentData[] = {
                                "A1,John,Smith,John1989@gm ail.com,20,30,35,40,SECURITY",
                                "A2,Suzan,Erickson,Erickson_1990@gmailcom,19,50,30,40,NETWORK",
                                "A3,Jack,Napoli,The_lawyer99yahoo.com,19,20,40,33,SOFTWARE",
                                "A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY",
-                               "A5,Jim,Conner,jconn59@wgu.edu,45,13,0,0,SOFTWARE",
+                               "A5,Jim,Conner,jconn59@wgu.edu,45,13,10,12,SOFTWARE",
                              };
 const int MAX = 5;
 

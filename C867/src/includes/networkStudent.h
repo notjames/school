@@ -1,6 +1,9 @@
 #ifndef NETWORKSTUDENT_H
 #define NETWORKSTUDENT_H
 
+#include <string>
+#include "student.h"
+
 class NetworkStudent : private Student
 {
   public:

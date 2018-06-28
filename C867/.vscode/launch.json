@@ -11,8 +11,10 @@
             "program": "${workspaceFolder}/${file}",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
+            "cwd": "${workspaceFolder}/C867",
             "environment": [],
             "externalConsole": true,
             "MIMode": "lldb"
         }
+    ]
+}

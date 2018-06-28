@@ -1,6 +1,9 @@
 #ifndef SECURITYSTUDENT_H
 #define SECURITYSTUDENT_H
 
+#include <string>
+#include "student.h"
+
 class SecurityStudent : private Student
 {
   public:

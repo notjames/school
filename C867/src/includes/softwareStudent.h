@@ -2,6 +2,7 @@
 #define SOFTWARESTUDENT_H
 
 #include <string>
+#include "student.h"
 
 class SoftwareStudent : private Student
 {

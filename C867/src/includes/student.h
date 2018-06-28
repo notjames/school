@@ -2,7 +2,7 @@
 #define STUDENT_H
 
 #include <iostream>
-#include <degree.h>
+#include "degree.h"
 
 using namespace std;
 

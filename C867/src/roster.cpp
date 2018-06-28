@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
-#include <roster.h>
+#include "includes/roster.h"
 
 using namespace std;
 using std::cout;
@@ -64,9 +64,9 @@ int Roster::create_students()
       token = strtok(NULL,delimiter);
     }
 
-    d1          = atoi(a_student[4].c_str());
-    d2          = atoi(a_student[5].c_str());
-    d3          = atoi(a_student[6].c_str());
+    d1          = atoi(a_student[5].c_str());
+    d2          = atoi(a_student[6].c_str());
+    d3          = atoi(a_student[7].c_str());
     int num_days[3] = {d1, d2, d3};
 
     for ( int i = 0; i <= i_word; i++ )
@@ -75,8 +75,8 @@ int Roster::create_students()
       s->set_first_name(a_student[1]);
       s->set_last_name(a_student[2]);
       s->set_email_address(&a_student[3]);
+      s->set_age(atoi(a_student[4].c_str()));
       s->set_num_days(num_days);
-      s->set_age(atoi(a_student[7].c_str()));
       s->set_degree_type(a_student[8].c_str());
 /*
       cout << "student id: " << s->get_student_id() << endl;
