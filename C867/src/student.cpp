@@ -147,3 +147,4 @@ string Student::get_degree_name()
 // TODO and then fix this too to accept student_id and print just one student.
 void Student::print() { }
 
+void Student::getDegreeProgram() { }

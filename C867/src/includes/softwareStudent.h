@@ -13,7 +13,7 @@ class SoftwareStudent : private Student
     ~SoftwareStudent();
     //SoftwareStudent(const SoftwareStudent& klass);
 
-    virtual void getDegreeProgram();
+    void getDegreeProgram();
     void print();
 
   private:

@@ -90,7 +90,7 @@ class Student
     void     set_degreetostr()        ; // sets degree_name
     void     set_degree_type(string)  ; // sets degree_name and Degree enum
     virtual void print()              ;
-    void     getDegreeProgram()   ;
+    virtual void getDegreeProgram()   ;
 
   private:
     string   student_id;
