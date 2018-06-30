@@ -34,13 +34,13 @@ using namespace std;
               If the student ID does not exist, the function prints an error message
               indicating that the student was not found.
 
-          c.  public void printAll() that prints a complete tab-separated list of
+✅        c.  public void printAll() that prints a complete tab-separated list of
               student data using accessor functions with the provided format:
 
               1 [tab] First Name: John [tab] Last Name: Smith [tab] Age: 20
                 [tab]daysInCourse: {35, 40, 55} Degree Program: Security.
 
-              The printAll() function should loop through all the students in
+✅            The printAll() function should loop through all the students in
               classRosterArray and call the print() function for each student.
 
 ✅        d.  public void printDaysInCourse(string studentID) that correctly prints a

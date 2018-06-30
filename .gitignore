@@ -1,3 +1,6 @@
 scratch/
 **.o
 roster
+CMakeCache.txt
+cmake_install.cmake
+CMakeFiles/

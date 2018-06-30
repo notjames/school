@@ -41,25 +41,25 @@ using std::setw;
               Note: Degree type should be populated in subclasses only.
 
       2.  Create each of the following functions in the Student class:
-          a.  an accessor (i.e., getter) for each instance variable from part D1
-          b.  a mutator (i.e., setter) for each instance variable from part D1
+✅        a.  an accessor (i.e., getter) for each instance variable from part D1
+✅        b.  a mutator (i.e., setter) for each instance variable from part D1
 
-              Note: All access and changes to the instance variables of the Student class
+✅              Note: All access and changes to the instance variables of the Student class
                     should be done through the accessor and mutator functions.
 
-          c.  constructor using all of the input parameters provided in the table
-          d.  virtual print() to print specific student data
-          e.  destructor
-          f.  virtual getDegreeProgram()
+✅        c.  constructor using all of the input parameters provided in the table
+✅        d.  virtual print() to print specific student data
+✅        e.  destructor
+✅        f.  virtual getDegreeProgram()
 
               Note: Leave the implementation of the getDegreeProgram() function empty.
 
       3.  Create the three following classes as subclasses of Student, using the files created
           in part B:
-          •   SecurityStudent
-          •   NetworkStudent
-          •   SoftwareStudent
-          Each subclass should override the getDegreeProgram() function. Each subclass should
+✅        •   SecurityStudent
+✅        •   NetworkStudent
+✅        •   SoftwareStudent
+✅        Each subclass should override the getDegreeProgram() function. Each subclass should
           have a data member to hold the enumerated type for the degree program using the types
           defined in part C.
 
