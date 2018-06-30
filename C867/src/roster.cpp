@@ -1,8 +1,7 @@
 #include <cstddef>
 #include <iostream>
-#include <string>
+#include <string.h>
 #include "includes/roster.h"
-#include "includes/networkStudent.h"
 
 using namespace std;
 
