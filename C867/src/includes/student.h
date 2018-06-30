@@ -3,8 +3,12 @@
 
 #include <iostream>
 #include "degree.h"
+#include <iomanip>
 
 using namespace std;
+using std::cout;
+using std::endl;
+using std::setw;
 
 /*
 ✅A.  Modify the studentData table to include your personal information as the last item

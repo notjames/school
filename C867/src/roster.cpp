@@ -1,13 +1,10 @@
 #include <cstddef>
 #include <iostream>
 #include <string>
-#include <iomanip>
 #include "includes/roster.h"
+#include "includes/networkStudent.h"
 
 using namespace std;
-using std::cout;
-using std::endl;
-using std::setw;
 
 /*
   F.  Demonstrate the program’s required functionality by adding a void main() function to roster.cpp,
@@ -47,8 +44,11 @@ int Roster::create_students()
   {
     int d1, d2, d3;
 
-    Student *s;
-    s                  = new Student();
+    NetworkStudent  ns;
+    SecurityStudent ss;
+    SoftwareStudent sw;
+
+    Student *s         = new Student();
     string line        = studentData[i];
     char   delimiter[] = ",";
     int    i_word      = 0;
@@ -62,6 +62,21 @@ int Roster::create_students()
       a_student[i_word] = token;
       i_word++;
       token = strtok(NULL,delimiter);
+    }
+
+    if ( strcmp(a_student[8].c_str(), "SOFTWARE") )
+    {
+      s = &sw;
+    }
+
+    if ( strcmp(a_student[8].c_str(), "NETWORKING") )
+    {
+      s = &ns;
+    }
+
+    if ( strcmp(a_student[8].c_str(), "SECURITY") )
+    {
+      s = &ss;
     }
 
     d1          = atoi(a_student[5].c_str());
@@ -118,29 +133,10 @@ void Roster::printAll()
 {
   for ( int i = 0 ; i <= MAX ; i++ )
   {
-    cout << left << "First Name:      " << setw(8) << this->classRosterArray[i]->get_first_name();
-    cout << left << " Last Name:      " << setw(8) << this->classRosterArray[i]->get_last_name();
-    cout << left << " Age:           "  << this->classRosterArray[i]->get_age();
-
-    if ( this->classRosterArray[i]->get_age() < 10 )
-    {
-      cout << left << setw(16) << "\tdaysInCourse:  {";
-    }
-    else
-    {
-      cout << left << setw(16) << "\tdaysInCourse: {";
-    }
-
-    for ( int z = 0 ; z < 3 ; z++ )
-    {
-      cout << this->classRosterArray[i]->get_num_days()[z];
-      if ( z != 2 ) { cout << ", "; }
-    }
-    cout << setw(6) << left << "}";
-
-    cout << setw(15) << " Degree Program: " << this->classRosterArray[i]->get_degree_name();
-    cout << endl;
+    this->classRosterArray[i]->print();
   }
+  // TODO -- need to figure out why this is segfaulting.
+  cout << "got here!" << endl;
 }
 
 void Roster::printDaysInCourse(string) { }

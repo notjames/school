@@ -4,7 +4,7 @@
 #include <string>
 #include "student.h"
 
-class NetworkStudent : private Student
+class NetworkStudent : public Student
 {
   public:
     NetworkStudent();

@@ -4,7 +4,7 @@
 #include <string>
 #include "student.h"
 
-class SoftwareStudent : private Student
+class SoftwareStudent : public Student
 {
   public:
     SoftwareStudent();

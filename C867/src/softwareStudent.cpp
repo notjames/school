@@ -1,6 +1,4 @@
 #include "includes/roster.h"
-#include "includes/student.h"
-
 
 using namespace std;
 
@@ -21,9 +19,5 @@ void SoftwareStudent::getDegreeProgram() { }
 
 void SoftwareStudent::print()
 {
-  cout << "ID: "     << this->get_student_id()    << "\t";
-  cout << "Name: "   << this->get_first_name()    << " " << this->get_last_name() << "\t";
-  cout << "Age:  "   << this->get_age()           << "\t";
-  cout << "Email:  " << this->get_email_address() << "\t";
-  cout << "Degree: " << this->get_degree_name()   << endl;
+  cout << setw(15) << " Degree Program: " << this->get_degree_name() << endl;
 }
