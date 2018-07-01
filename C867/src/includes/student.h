@@ -2,8 +2,9 @@
 #define STUDENT_H
 
 #include <iostream>
-#include "degree.h"
 #include <iomanip>
+
+#include "degree.h"
 
 using namespace std;
 using std::cout;

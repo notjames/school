@@ -1,3 +1,4 @@
+#include "includes/softwareStudent.h"
 #include "includes/roster.h"
 
 using namespace std;
@@ -10,6 +11,8 @@ SoftwareStudent::SoftwareStudent(string first_name, string last_name,
 {
   this->set_degree_type(degree_name);
 }
+
+SoftwareStudent::SoftwareStudent() { }
 
 // destructor
 SoftwareStudent::~SoftwareStudent() { }

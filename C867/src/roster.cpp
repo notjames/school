@@ -1,6 +1,10 @@
 #include <cstddef>
 #include <iostream>
 #include <string.h>
+
+#include "includes/softwareStudent.h"
+#include "includes/networkStudent.h"
+#include "includes/securityStudent.h"
 #include "includes/roster.h"
 
 using namespace std;
@@ -92,15 +96,6 @@ int Roster::create_students()
       s->set_age(atoi(a_student[4].c_str()));
       s->set_num_days(num_days);
       s->set_degree_type(a_student[8].c_str());
-/*
-      cout << "student id: " << s->get_student_id() << endl;
-      cout << "first name: " << s->get_first_name() << endl;
-      cout << "last name : " << s->get_last_name()  << endl;
-      cout << "email addr: " << s->get_email_address() << endl;
-      cout << "age:        " << s->get_age()        << endl;
-      cout << "program:    " << s->get_degree_name()<< endl;
-      cout << endl;
- */
     }
 
     classRosterArray[i] = s;
@@ -153,7 +148,7 @@ int main(void)
 
   Roster classRoster;
 
-  classRoster.printAll();
+  //classRoster.printAll();
   /*
   classRoster.printInvalidEmails();
   // loop through classRosterArray and for each element:

@@ -3,11 +3,7 @@
 
 #include <list>
 #include <string>
-#include "degree.h"
 #include "student.h"
-#include "softwareStudent.h"
-#include "networkStudent.h"
-#include "securityStudent.h"
 
 using namespace std;
 

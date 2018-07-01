@@ -1,3 +1,4 @@
+#include "includes/securityStudent.h"
 #include "includes/roster.h"
 
 using namespace std;
@@ -10,6 +11,8 @@ SecurityStudent::SecurityStudent(string first_name, string last_name,
 {
   this->set_degree_type(degree_name);
 }
+
+SecurityStudent::SecurityStudent() {}
 
 // destructor
 SecurityStudent::~SecurityStudent() {}
