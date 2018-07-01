@@ -87,7 +87,7 @@ int Roster::create_students()
     d3          = atoi(a_student[7].c_str());
     int num_days[3] = {d1, d2, d3};
 
-    for ( int i = 0; i <= i_word; i++ )
+    for ( int z = 0; z <= i_word; z++ )
     {
       s->set_student_id(a_student[0]);
       s->set_first_name(a_student[1]);

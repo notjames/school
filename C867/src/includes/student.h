@@ -105,7 +105,7 @@ class Student
     string   *shadow;
     int      age;
     int      num_days[3]; // array of number of days to complete each course
-    string   degree_name;
+    string   *degree_name;
     Degree   degree_type;
 };
 

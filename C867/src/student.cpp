@@ -14,7 +14,7 @@ Student::Student()
   last_name     = "last_name";
   email_address = "email_address";
   age           = 0;
-  degree_name   = "";
+  degree_name   = new string();
   degree_type   = NOT_ASSIGNED;
 
   // the only way I could set num_days inside the constructor
@@ -58,19 +58,20 @@ void Student::set_last_name(string last_name)
 // by looking at this->degree_name
 void Student::set_degree_type(string degree_name)
 {
-  this->degree_name = degree_name;
+  this->degree_name = &degree_name;
 
-  if ( this->degree_name == "SOFTWARE" )
+  if ( degree_name == "SOFTWARE" )
   {
     this->degree_type = SOFTWARE;
   }
 
-  if ( this->degree_name == "NETWORKING" )
+  if ( degree_name == "NETWORKING" )
   {
     this->degree_type = NETWORKING;
+    cout << "degree name is: " << this->degree_type << endl;
   }
 
-  if ( this->degree_name == "SECURITY" )
+  if ( degree_name == "SECURITY" )
   {
     this->degree_type = SECURITY;
   }
@@ -100,11 +101,11 @@ void Student::set_degreetostr()
 {
   switch(this->degree_type)
   {
-    case SOFTWARE   : this->degree_name = "Software";     break;
-    case NETWORKING : this->degree_name = "Networking";   break;
-    case SECURITY   : this->degree_name = "Security";     break;
+    case SOFTWARE   : *(this->degree_name) = "Software";     break;
+    case NETWORKING : *(this->degree_name) = "Networking";   break;
+    case SECURITY   : *(this->degree_name) = "Security";     break;
     // technically shouldn't happen
-    default         : this->degree_name = "Not Assigned"; break;
+    default         : *(this->degree_name) = "Not Assigned"; break;
   }
 }
 
@@ -142,7 +143,7 @@ int *Student::get_num_days()
 
 string Student::get_degree_name()
 {
-  return this->degree_name;
+  return *(this->degree_name);
 }
 
 // TODO and then fix this too to accept student_id and print just one student.
