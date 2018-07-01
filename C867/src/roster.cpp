@@ -125,12 +125,10 @@ void Roster::printAverageDaysInCourse(string student_id)
 // [tab]daysInCourse: {35, 40, 55} Degree Program: Security.
 void Roster::printAll()
 {
-  for ( int i = 0 ; i <= MAX ; i++ )
+  for ( int c = 0 ; c <= MAX ; c++ )
   {
-    this->classRosterArray[i]->print();
+    this->classRosterArray[c]->print();
   }
-  // TODO -- need to figure out why this is segfaulting.
-  cout << "got here!" << endl;
 }
 
 void Roster::printDaysInCourse(string) { }
@@ -148,7 +146,7 @@ int main(void)
 
   Roster classRoster;
 
-  //classRoster.printAll();
+  classRoster.printAll();
   /*
   classRoster.printInvalidEmails();
   // loop through classRosterArray and for each element:
