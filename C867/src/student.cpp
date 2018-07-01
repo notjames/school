@@ -60,17 +60,17 @@ void Student::set_degree_type(string degree_name)
 {
   this->degree_name = degree_name;
 
-  if ( this->degree_name == "Software" )
+  if ( this->degree_name == "SOFTWARE" )
   {
     this->degree_type = SOFTWARE;
   }
 
-  if ( this->degree_name == "Networking" )
+  if ( this->degree_name == "NETWORKING" )
   {
     this->degree_type = NETWORKING;
   }
 
-  if ( this->degree_name == "Security" )
+  if ( this->degree_name == "SECURITY" )
   {
     this->degree_type = SECURITY;
   }
