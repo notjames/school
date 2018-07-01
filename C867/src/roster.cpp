@@ -125,7 +125,7 @@ void Roster::printAverageDaysInCourse(string student_id)
 // [tab]daysInCourse: {35, 40, 55} Degree Program: Security.
 void Roster::printAll()
 {
-  for ( int c = 0 ; c <= MAX ; c++ )
+  for ( int c = 0 ; c < MAX ; c++ )
   {
     this->classRosterArray[c]->print();
   }
