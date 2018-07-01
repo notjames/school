@@ -158,7 +158,7 @@ int main(void)
   classRoster.remove("A3");
   */
 
-  delete[] &classRoster;
+  //delete[] &classRoster;
 
   return 0;
 }
