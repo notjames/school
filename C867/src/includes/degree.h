@@ -6,6 +6,7 @@ enum Degree
   SECURITY    ,
   NETWORKING  ,
   SOFTWARE    ,
+  NOT_ASSIGNED,
 };
 
 #endif

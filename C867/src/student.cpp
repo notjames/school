@@ -15,6 +15,7 @@ Student::Student()
   email_address = "email_address";
   age           = 0;
   degree_name   = "";
+  degree_type   = NOT_ASSIGNED;
 
   // the only way I could set num_days inside the constructor
   for ( int i = 0; i <= 3; i++ ) num_days[i] = 0;
