@@ -13,8 +13,6 @@ NetworkStudent::NetworkStudent(string first_name, string last_name,
   this->set_degree_type(degree_name);
 }
 
-NetworkStudent::NetworkStudent() { }
-
 // destructor
 NetworkStudent::~NetworkStudent() { }
 

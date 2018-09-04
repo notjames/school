@@ -102,7 +102,7 @@ class Student
     string   first_name;
     string   last_name;
     string   email_address;
-    string   *shadow;
+    //string   *shadow;
     int      age;
     int      num_days[3]; // array of number of days to complete each course
     string   *degree_name;

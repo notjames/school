@@ -45,17 +45,13 @@ int Roster::create_students()
 {
   for ( int i = 0; i < MAX; i++ )
   {
-    int d1, d2, d3;
+    string first_name, last_name, student_id, email_address, degree_name, line;
+    int    age, d1, d2, d3;
+    char   *token;
 
-    NetworkStudent  ns;
-    SecurityStudent ss;
-    SoftwareStudent sw;
-
-    Student *s         = new Student();
-    string line        = studentData[i];
+    line               = studentData[i];
     char   delimiter[] = ",";
     int    i_word      = 0;
-    char   *token;
     string a_student[9];
 
     token = strtok(&line[0], delimiter);
@@ -67,38 +63,43 @@ int Roster::create_students()
       token = strtok(NULL,delimiter);
     }
 
+    d1                 = atoi(a_student[5].c_str());
+    d2                 = atoi(a_student[6].c_str());
+    d3                 = atoi(a_student[7].c_str());
+    int num_days[3]    = {d1, d2, d3};
+
+    student_id         = a_student[0];
+    first_name         = a_student[1];
+    last_name          = a_student[2];
+    email_address      = a_student[3];
+    age                = atoi(a_student[4].c_str());
+    degree_name        = a_student[8];
+
+    Student *s         = new Student(first_name, last_name, email_address, age,
+                                     num_days, student_id, degree_name);
+
     if ( strcmp(a_student[8].c_str(), "SOFTWARE") )
     {
+      SoftwareStudent sw(first_name, last_name, email_address, age,
+                         num_days, student_id, degree_name);
       s = &sw;
-    }
-
-    if ( strcmp(a_student[8].c_str(), "NETWORKING") )
-    {
-      s = &ns;
     }
 
     if ( strcmp(a_student[8].c_str(), "SECURITY") )
     {
+      SecurityStudent ss(first_name, last_name, email_address, age,
+                         num_days, student_id, degree_name);
       s = &ss;
     }
 
-    d1          = atoi(a_student[5].c_str());
-    d2          = atoi(a_student[6].c_str());
-    d3          = atoi(a_student[7].c_str());
-    int num_days[3] = {d1, d2, d3};
-
-    for ( int z = 0; z <= i_word; z++ )
+    if ( strcmp(a_student[8].c_str(), "NETWORKING") )
     {
-      s->set_student_id(a_student[0]);
-      s->set_first_name(a_student[1]);
-      s->set_last_name(a_student[2]);
-      s->set_email_address(&a_student[3]);
-      s->set_age(atoi(a_student[4].c_str()));
-      s->set_num_days(num_days);
-      s->set_degree_type(a_student[8].c_str());
+      NetworkStudent  ns(first_name, last_name, email_address, age,
+                         num_days, student_id, degree_name);
+      s = &ns;
     }
 
-    classRosterArray[i] = s;
+    classRosterArray[i] = new Student(*s);
   }
 
   return 0;

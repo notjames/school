@@ -26,10 +26,12 @@ Student::Student(string first_name, string last_name,
                  string email_addr, int age, int *num_days,
                  string student_id, string degree_name)
 {
-  student_id    = student_id;
-  first_name    = first_name;
-  last_name     = last_name;
-  email_address = email_addr;
+  this->student_id    = student_id;
+  this->first_name    = first_name;
+  this->last_name     = last_name;
+  this->age           = age;
+  this->email_address = email_addr;
+  this->set_num_days(num_days);
 }
 
 // destructor
@@ -80,11 +82,11 @@ void Student::set_degree_type(string degree_name)
 // for some reason during runtime, I keep getting memory
 // allocation errors:
 // roster: malloc.c:2427: sysmalloc: Assertion `(old_top == initial_top (av) && old_size == 0) || ((unsigned long) (old_size) >= MINSIZE && prev_inuse (old_top) && ((unsigned long) old_end & (pagesize - 1)) == 0)' failed.
-// no idea how to fix that and everything else I've tries
+// no idea how to fix that and everything else I've tried
 // while following the instructions throws that error.
 void Student::set_email_address(string *email_address)
 {
-  this->shadow = new string(email_address->c_str());
+  this->email_address = *email_address;
 }
 
 void Student::set_age(int age)
@@ -127,7 +129,7 @@ string Student::get_last_name()
 
 string Student::get_email_address()
 {
-  return *(this->shadow);
+  return this->email_address;
   //return this->email_address;
 }
 
@@ -166,7 +168,7 @@ void Student::print()
     cout << this->get_num_days()[z];
     if ( z != 2 ) { cout << ", "; }
   }
-  cout << setw(6) << left << "}";
+  cout << setw(6) << left << "}" << endl;
 }
 
 void Student::getDegreeProgram() 

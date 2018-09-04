@@ -7,7 +7,7 @@
 class SecurityStudent : public Student
 {
   public:
-    SecurityStudent();
+    //SecurityStudent();
     SecurityStudent(string first_name, string last_name,
                     string email_addr, int age, int *num_days,
                     string student_id, string degree_name);
