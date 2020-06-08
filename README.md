@@ -1,4 +1,2 @@
-# wgu
-To use cmake do the following in the C867 directory:
-
-    cmake CMakeLists.txt && cmake --build .
+# Personal
+encrypted with 6EE45DC170ADE4028242E448C8236108268C2BC3
